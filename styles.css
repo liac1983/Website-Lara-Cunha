@@ -1,0 +1,174 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #fff;
+    color: #333;
+    padding: 10px;
+    text-align: center;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack the items vertically */
+    justify-content: space-between; /* Space items evenly across the header */
+    align-items: center; /* Center items horizontally */
+}
+
+header h1 {
+    font-size: 36px;
+    margin
+}
+
+h1 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300; /* Peso mais leve, 300 é o valor padrão para fonte light da Roboto */
+}
+
+.search-bar {
+    margin-bottom: 10px;
+}
+
+.search-bar input[type="text"] {
+    padding: 5px;
+    width: 200px;
+}
+
+.search-bar button {
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #333;
+}
+
+header nav {
+    margin-top: 10px;
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center items horizontally */
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li a {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300; /* Peso mais leve, 300 é o valor padrão para fonte light da Roboto */
+    color: #333;
+    text-decoration: none;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    padding: 0;
+}
+
+.welcome-image {
+    position: relative;
+    text-align: center;
+}
+
+.welcome-image img {
+    width: 100%; /* Adjust the image size as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.welcome-image h1.title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle shadow to the text */
+}
+
+.welcome-image h1.title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 72px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle shadow to the text */
+}
+
+.welcome-image p.sub-title {
+    position: absolute;
+    top: 55%; /* Adjust the vertical position of the subtitle */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px; /* Defina o tamanho da fonte menor */
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add a subtle shadow to the text */
+}
+
+
+section h2 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+/* Estilize o texto 'Everything is possible' */
+section#home .sub-title {
+    position: absolute;
+    top: 70%; /* Ajuste a posição vertical do subtítulo */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px; /* Defina o tamanho da fonte menor */
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Adicione uma sombra sutil ao texto */
+}
+
+/* Estilize a seção "About" */
+section#about {
+    background-color: #d6dee2;
+    text-align: center;
+    padding: 40px; /* Adicione um espaçamento interno para melhor visualização */
+}
+
+/* Estilize o título da seção "About" */
+section#about h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Estilize o texto da seção "About" */
+section#about p {
+    font-size: 18px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
