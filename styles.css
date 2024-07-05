@@ -10,20 +10,64 @@ header {
     color: #333;
     padding: 10px;
     text-align: center;
-    display: flex; /* Use flexbox */
-    flex-direction: column; /* Stack the items vertically */
-    justify-content: space-between; /* Space items evenly across the header */
-    align-items: center; /* Center items horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
 }
 
 header h1 {
     font-size: 36px;
-    margin
+}
+
+.menu-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #333;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 1000;
+}
+
+.sidebar.active {
+    width: 250px;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    padding: 8px 8px 8px 16px;
+}
+
+.sidebar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: #575757;
 }
 
 h1 {
     font-family: "Roboto", sans-serif;
-    font-weight: 300; /* Peso mais leve, 300 é o valor padrão para fonte light da Roboto */
+    font-weight: 300;
 }
 
 .search-bar {
@@ -51,8 +95,8 @@ h1 {
 
 header nav {
     margin-top: 10px;
-    display: flex; /* Use flexbox */
-    justify-content: center; /* Center items horizontally */
+    display: flex;
+    justify-content: center;
 }
 
 header nav ul {
@@ -63,7 +107,7 @@ header nav ul {
 
 header nav ul li a {
     font-family: "Roboto", sans-serif;
-    font-weight: 300; /* Peso mais leve, 300 é o valor padrão para fonte light da Roboto */
+    font-weight: 300;
     color: #333;
     text-decoration: none;
 }
@@ -113,54 +157,30 @@ section {
     text-align: center;
 }
 
-.welcome-image img {
-    width: 100%; /* Adjust the image size as needed */
-    height: auto; /* Maintain aspect ratio */
-}
-
-.welcome-to-our-company img {
-    width: 100%; /* Adjust the image size as needed */
-    height: auto; /* Maintain aspect ratio */
-}
-
-.projects img {
-    width: 100%; /* Adjust the image size as needed */
-    height: auto; /* Maintain aspect ratio */
-}
-
+.welcome-image img,
+.welcome-to-our-company img,
+.projects img,
 .contact img {
-    width: 100%; /* Adjust the image size as needed */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%;
+    height: auto;
 }
 
-.welcome-image h1.title {
+.welcome-image h1.title,
+.welcome-image p.sub-title {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 48px;
     color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle shadow to the text */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .welcome-image h1.title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     font-size: 72px;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle shadow to the text */
 }
 
 .welcome-image p.sub-title {
-    position: absolute;
-    top: 55%; /* Adjust the vertical position of the subtitle */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 36px; /* Defina o tamanho da fonte menor */
-    color: #fff;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add a subtle shadow to the text */
+    font-size: 36px;
 }
 
 section h2 {
@@ -168,18 +188,10 @@ section h2 {
     padding-bottom: 10px;
 }
 
-/* Estilize o texto 'Everything is possible' */
 section#home .sub-title {
-    position: absolute;
-    top: 70%; /* Ajuste a posição vertical do subtítulo */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 36px; /* Defina o tamanho da fonte menor */
-    color: #fff;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Adicione uma sombra sutil ao texto */
+    top: 70%;
+    font-size: 36px;
 }
-
-
 
 footer {
     background-color: #333;

@@ -9,23 +9,33 @@
 </head>
 <body>
     <header>
-        <div class="search-bar-container"> <!-- Wrap the search bar with the new container div -->
+        <div class="search-bar-container">
             <h1>LARA CUNHA</h1>
-            
+            <div class="menu-button" onclick="toggleSidebar()">&#9776;</div> <!-- Botão de três tracinhos -->
+            <nav>
+                <ul>
+                    <li><a href="#home" onclick="toggleSidebar()">Home</a></li>
+                    <li><a href="#about" onclick="toggleSidebar()">About</a></li>
+                    <li><a href="#projects" onclick="toggleSidebar()">Projects</a></li>
+                    <li><a href="#contact" onclick="toggleSidebar()">Contact</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
+
+    <div id="sidebar" class="sidebar">
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" onclick="toggleSidebar()">Home</a></li>
+                <li><a href="#about" onclick="toggleSidebar()">About</a></li>
+                <li><a href="#projects" onclick="toggleSidebar()">Projects</a></li>
+                <li><a href="#contact" onclick="toggleSidebar()">Contact</a></li>
             </ul>
         </nav>
-    </header>
-    
+    </div>
+
     <section id="home">
         <div class="welcome-image">
-            
             <img src="Lara Cunha.png" alt="Welcome Image">
         </div>
     </section>
@@ -51,5 +61,22 @@
     <footer>
         <p>&copy; 2024 Lara Cunha </p>
     </footer>
+
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        document.addEventListener('click', function(event) {
+            var sidebar = document.getElementById('sidebar');
+            var menuButton = document.querySelector('.menu-button');
+            var isClickInside = sidebar.contains(event.target) || menuButton.contains(event.target);
+
+            if (!isClickInside) {
+                sidebar.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
