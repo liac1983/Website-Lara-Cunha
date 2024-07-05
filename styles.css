@@ -27,7 +27,9 @@ h1 {
 }
 
 .search-bar {
-    margin-bottom: 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
 .search-bar input[type="text"] {
@@ -44,7 +46,7 @@ h1 {
 }
 
 .search-bar button:hover {
-    background-color: #333;
+    background-color: #555;
 }
 
 header nav {
@@ -96,7 +98,37 @@ section {
     text-align: center;
 }
 
+.welcome-to-our-company {
+    position: relative;
+    text-align: center;
+}
+
+.projects {
+    position: relative;
+    text-align: center;
+}
+
+.contact {
+    position: relative;
+    text-align: center;
+}
+
 .welcome-image img {
+    width: 100%; /* Adjust the image size as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.welcome-to-our-company img {
+    width: 100%; /* Adjust the image size as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.projects img {
+    width: 100%; /* Adjust the image size as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.contact img {
     width: 100%; /* Adjust the image size as needed */
     height: auto; /* Maintain aspect ratio */
 }
@@ -131,7 +163,6 @@ section {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add a subtle shadow to the text */
 }
 
-
 section h2 {
     border-bottom: 1px solid #ccc;
     padding-bottom: 10px;
@@ -148,23 +179,7 @@ section#home .sub-title {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Adicione uma sombra sutil ao texto */
 }
 
-/* Estilize a seção "About" */
-section#about {
-    background-color: #d6dee2;
-    text-align: center;
-    padding: 40px; /* Adicione um espaçamento interno para melhor visualização */
-}
 
-/* Estilize o título da seção "About" */
-section#about h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-/* Estilize o texto da seção "About" */
-section#about p {
-    font-size: 18px;
-}
 
 footer {
     background-color: #333;
