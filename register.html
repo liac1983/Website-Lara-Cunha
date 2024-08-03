@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Registrar</h2>
+    <form id="register-form" onsubmit="return validateRegister(event)">
+        <div class="form-group">
+            <label for="username">Usuário</label>
+            <input type="text" id="username" name="username" required>
+            <span class="error" id="username-error"></span>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <span class="error" id="email-error"></span>
+        </div>
+        <div class="form-group">
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" required>
+            <span class="error" id="password-error"></span>
+        </div>
+        <button type="submit">Registrar</button>
+    </form>
+
+    <script>
+        function validateRegister(event) {
+            event.preventDefault();
+
+            let isValid = true;
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Clear previous errors
+            document.getElementById('username-error').innerText = '';
+            document.getElementById('email-error').innerText = '';
+            document.getElementById('password-error').innerText = '';
+
+            // Validate username
+            if (username === '') {
+                document.getElementById('username-error').innerText = 'Usuário é obrigatório';
+                isValid = false;
+            }
+
+            // Validate email
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email === '') {
+                document.getElementById('email-error').innerText = 'Email é obrigatório';
+                isValid = false;
+            } else if (!emailPattern.test(email)) {
+                document.getElementById('email-error').innerText = 'Email inválido';
+                isValid = false;
+            }
+
+            // Validate password
+            if (password === '') {
+                document.getElementById('password-error').innerText = 'Senha é obrigatória';
+                isValid = false;
+            }
+
+            if (isValid) {
+                alert('Registro bem-sucedido!');
+                window.location.href = 'index.html';
+            }
+
+            return isValid;
+        }
+    </script>
+</body>
+</html>

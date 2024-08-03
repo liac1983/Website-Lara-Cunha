@@ -10,6 +10,10 @@
 <body>
     <header>
         <div class="search-bar-container">
+            <div class="auth-buttons">
+                <button onclick="window.location.href='register.html'">Registrar</button>
+                <button onclick="window.location.href='login.html'">Login</button>
+            </div>
             <h1>LARA CUNHA</h1>
             <div class="menu-button" onclick="toggleSidebar()">&#9776;</div> <!-- Botão de três tracinhos -->
             <nav>
@@ -48,13 +52,75 @@
     
     <section id="projects">
         <div class="projects">
-            <img src="Projects.png" alt="Projects">
+            <img src="Projects.png" alt="Projects Background" class="background-image">
+        </div>
+        <div class="carousel-container">
+            <h2>Projects</h2>
+            <div class="carousel">
+                <div class="carousel-item">
+                    <a href="project1.html"><img src="Project1.png" alt="Coming Soon"></a>
+                    <p><strong>Candy Maze</strong></p>
+                    <p>Computer Game</p>
+                </div>
+                <div class="carousel-item">
+                    <a href="project2.html"><img src="Project2.png" alt="Coming Soon"></a>
+                    <p><strong>Eventfully</strong></p>
+                    <p>App</p>
+                </div>
+                <div class="carousel-item">
+                    <a href="project3.html"><img src="Project3.png" alt="Coming Soon"></a>
+                    <p><strong>Swift Ticket</strong></p>
+                    <p>Website</p>
+                </div>
+                <div class="carousel-item">
+                    <a href="project4.html"><img src="Project4.png" alt="Coming Soon"></a>
+                    <p><strong>GetTogether</strong></p>
+                    <p>Website</p>
+                </div>
+            </div>
+            <button class="carousel-button left" onclick="moveCarousel(-1)">&#10094;</button>
+            <button class="carousel-button right" onclick="moveCarousel(1)">&#10095;</button>
         </div>
     </section>
     
     <section id="contact">
         <div class="contact">
-            <img src="Contact.png" alt="Contact">
+            <div class="background-image"></div>
+            <div class="contact-form-container">
+                <h2>Vamos Conversar</h2>
+                <div class="contact-info">
+                    <p>R. Caminhos de São Tiago, 4590 Ferreira, Portugal</p>
+                    <p>lara2003cunha@gmail.com</p>
+                    <p>916526711</p>
+                </div>
+                <form id="contact-form" action="send_email.php" action="https://formsubmit.co/fade7da34dd9d762fb4b122c16f373bb" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="name">Nome *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefone</label>
+                        <input type="text" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Endereço</label>
+                        <input type="text" id="address" name="address">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Assunto</label>
+                        <input type="text" id="subject" name="subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
         </div>
     </section>
     
@@ -78,5 +144,52 @@
             }
         });
     </script>
+
+    <script>
+        let currentIndex = 0;
+
+        function moveCarousel(direction) {
+            const carousel = document.querySelector('.carousel');
+            const items = document.querySelectorAll('.carousel-item');
+            const totalItems = items.length;
+            const itemWidth = items[0].clientWidth;
+
+            currentIndex += direction;
+
+            if (currentIndex < 0) {
+                currentIndex = totalItems - 1;
+            } else if (currentIndex >= totalItems) {
+                currentIndex = 0;
+            }
+
+            const offset = -currentIndex * itemWidth;
+            carousel.style.transform = `translateX(${offset}px)`;
+        }
+    </script>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+    
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+        apiKey: "AIzaSyCOxZkkvHbn6WXdV45jtSUi2zVH1gLKNrQ",
+        authDomain: "lara-cunha.firebaseapp.com",
+        projectId: "lara-cunha",
+        storageBucket: "lara-cunha.appspot.com",
+        messagingSenderId: "364225138219",
+        appId: "1:364225138219:web:8fc57d21de22913f1a646e",
+        measurementId: "G-MKX4DQGP7H"
+        };
+    
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+
 </body>
 </html>
