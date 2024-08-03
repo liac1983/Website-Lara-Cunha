@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lara Cunha - Blog Profissional</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="search-bar-container">
+            <div class="auth-buttons">
+                <button onclick="window.location.href='register.html'">Registrar</button>
+                <button onclick="window.location.href='login.html'">Login</button>
+            </div>
+            <h1>LARA CUNHA</h1>
+            <div class="menu-button" onclick="toggleSidebar()">&#9776;</div> <!-- Botão de três tracinhos -->
+            <nav>
+                <ul>
+                    <li><a href="index.html#home" onclick="toggleSidebar()">Home</a></li>
+                    <li><a href="index.html#about" onclick="toggleSidebar()">About</a></li>
+                    <li><a href="index.html#projects" onclick="toggleSidebar()">Projects</a></li>
+                    <li><a href="index.html#contact" onclick="toggleSidebar()">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div id="sidebar" class="sidebar">
+        <nav>
+            <ul>
+                <li><a href="index.html#home" onclick="toggleSidebar()">Home</a></li>
+                <li><a href="index.html#about" onclick="toggleSidebar()">About</a></li>
+                <li><a href="index.html#projects" onclick="toggleSidebar()">Projects</a></li>
+                <li><a href="index.html#contact" onclick="toggleSidebar()">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <section id="projects">
+        <div class="projects">
+            <img src="Projects.png" alt="Projects Background" class="background-image">
+        </div>
+        <div class="project1">
+            <h2>Candy Maze</h2>
+            <div class="project-report">
+                <img src="Project1_page1.png" alt="Relatório Página 1">
+                <img src="Project1_page2.png" alt="Relatório Página 2">
+                <img src="Project1_page3.png" alt="Relatório Página 3">
+                <!-- Continue adicionando imagens conforme necessário -->
+            </div>
+
+            
+            
+            
+        </div>
+    </section>
+    
+    
+    
+    <footer>
+        <p>&copy; 2024 Lara Cunha </p>
+    </footer>
+
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        document.addEventListener('click', function(event) {
+            var sidebar = document.getElementById('sidebar');
+            var menuButton = document.querySelector('.menu-button');
+            var isClickInside = sidebar.contains(event.target) || menuButton.contains(event.target);
+
+            if (!isClickInside) {
+                sidebar.classList.remove('active');
+            }
+        });
+    </script>
+
+    <script>
+        let currentIndex = 0;
+
+        function moveCarousel(direction) {
+            const carousel = document.querySelector('.carousel');
+            const items = document.querySelectorAll('.carousel-item');
+            const totalItems = items.length;
+            const itemWidth = items[0].clientWidth;
+
+            currentIndex += direction;
+
+            if (currentIndex < 0) {
+                currentIndex = totalItems - 1;
+            } else if (currentIndex >= totalItems) {
+                currentIndex = 0;
+            }
+
+            const offset = -currentIndex * itemWidth;
+            carousel.style.transform = `translateX(${offset}px)`;
+        }
+    </script>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+    
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+        apiKey: "AIzaSyCOxZkkvHbn6WXdV45jtSUi2zVH1gLKNrQ",
+        authDomain: "lara-cunha.firebaseapp.com",
+        projectId: "lara-cunha",
+        storageBucket: "lara-cunha.appspot.com",
+        messagingSenderId: "364225138219",
+        appId: "1:364225138219:web:8fc57d21de22913f1a646e",
+        measurementId: "G-MKX4DQGP7H"
+        };
+    
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+
+</body>
+</html>
