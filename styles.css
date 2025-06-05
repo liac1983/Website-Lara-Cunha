@@ -198,6 +198,99 @@ section {
     font-size: 36px;
 }
 
+.eventfully {
+    position: relative;
+    text-align: center;
+}
+
+.eventfully img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+/* Título e subtítulo centralizados */
+.eventfully h1.title,
+.eventfully p.sub-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.eventfully h1.title {
+    font-size: 72px;
+}
+
+.eventfully p.sub-title {
+    font-size: 36px;
+}
+
+.gettogether {
+    position: relative;
+    text-align: center;
+}
+
+.gettogether img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+/* Título e subtítulo centralizados */
+.gettogether h1.title,
+.gettogether p.sub-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.gettogether h1.title {
+    font-size: 72px;
+}
+
+.gettogether p.sub-title {
+    font-size: 36px;
+}
+
+.swiftticket {
+    position: relative;
+    text-align: center;
+}
+
+.swiftticket img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+/* Título e subtítulo centralizados */
+.swiftticket h1.title,
+.swiftticket p.sub-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.swiftticket h1.title {
+    font-size: 72px;
+}
+
+.swiftticket p.sub-title {
+    font-size: 36px;
+}
+
 .learn-more-button {
     position: absolute;
     bottom: 7%; /* Ajuste esta porcentagem para posicionar corretamente o botão */

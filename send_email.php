@@ -31,18 +31,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Conteúdo
             $mail->isHTML(true);
             $mail->Subject = $subject;
-            $mail->Body    = nl2br("Nome: " . $name . "\nEmail: " . $email . "\nTelefone: " . $phone . "\nEndereço: " . $address . "\n\nMensagem:\n" . $message);
-            $mail->AltBody = "Nome: " . $name . "\nEmail: " . $email . "\nTelefone: " . $phone . "\nEndereço: " . $address . "\n\nMensagem:\n" . $message;
+            $mail->Body    = nl2br("Name: " . $name . "\nEmail: " . $email . "\nPhone Number: " . $phone . "\nAddress: " . $address . "\n\nMessage:\n" . $message);
+            $mail->AltBody = "Name: " . $name . "\nEmail: " . $email . "\nPhone Number: " . $phone . "\nAddress: " . $address . "\n\nMessage:\n" . $message;
 
             $mail->send();
-            echo "<script>alert('Email enviado com sucesso!'); window.location.href = 'index.html';</script>";
+            echo "<script>alert('Email sent successfully!'); window.location.href = 'index.html';</script>";
         } catch (Exception $e) {
-            echo "Erro ao enviar o email. Mailer Error: {$mail->ErrorInfo}";
+            echo "Error sending email. Mailer Error: {$mail->ErrorInfo}";
         }
     } else {
-        echo "<script>alert('Endereço de email inválido.'); window.location.href = 'index.html';</script>";
+        echo "<script>alert('Invalid email address.'); window.location.href = 'index.html';</script>";
     }
 } else {
-    echo "Método de requisição inválido.";
+    echo "Invalid request method.";
 }
 ?>
